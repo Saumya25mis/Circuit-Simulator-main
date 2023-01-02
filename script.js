@@ -36,7 +36,13 @@ function restoreGroups(){
     if(localoperations) operations = JSON.parse(localoperations);
 }
 function submit(){
-    fetch('http://localhost:8000/').then((response)=>{
+    let div=document.getElementById('screenshot');
+    html2canvas(div).then(
+        function(canvas){
+            document.getElementById('output').appendChild(canvas);
+        }
+    )
+    fetch('http://localhost:8000/submit').then((response)=>{
         console.log(response.data);
     })
 }

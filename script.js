@@ -37,7 +37,7 @@ function restoreGroups(){
 }
 function submit(){
     fetch('http://localhost:8000/').then((response)=>{
-        console.log(response);
+        console.log(response.data);
     })
 }
 function setup() {

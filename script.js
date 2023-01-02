@@ -35,7 +35,11 @@ function restoreGroups(){
     }
     if(localoperations) operations = JSON.parse(localoperations);
 }
-
+function submit(){
+    fetch('http://localhost:8000/').then((response)=>{
+        console.log(response);
+    })
+}
 function setup() {
     if (window.location.search?.substring(1) == 'full') {
         let cnvcont = document.getElementsByClassName("cnvcont")[0]
